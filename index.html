@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/weathersheet.css">
+  <style>
+
+  </style>
+
+    <title>Dark Sky Weather</title>
+  </head>
+  <body>
+    <div id="header">
+      <form id="searchForm">
+        <button class="currentLocationButton"><img src="images/location-16.png"></button>
+           <input placeholder= "Where are you?" type="text" value>
+        <button class="searchButton"><img src="images/search-12-16.png"></button>
+      </form>
+    </div>
+    <div id="currentWeatherWrapper">
+      <div class="wind">
+        <span class="lbWind">Wind:</span>
+        <span class="vWind"></span>
+      </div>
+    </div>
+    <div>
+   <a href="https://darksky.net/poweredby/"><img src="images/poweredby.png" width='10%'height="10%" alt="Powered by Dark Sky"></a>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery/jquery-3.3.1.js"></script>
+    <script src="scripts/popper.js/popper.js"></script>
+    <script src="scripts/popper.js/tooltip.js"></script>
+    <script src="scripts/bootstrap/bootstrap.js"></script>
+    <script src="scripts/dark-sky-api/dark-sky-api.js"></script>
+    <script src="scripts/skycons/skycons.js"></script>
+    <script scr="scripts/weather_report.js"></script>
+  </body>
+</html>

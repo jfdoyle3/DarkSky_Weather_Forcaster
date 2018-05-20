@@ -1,0 +1,33 @@
+
+
+form {
+    text-align: center;
+    background-color: lightgrey;
+    font-size: 1em;
+    padding: 0.5em;
+    font-family: sans-serif;
+}
+
+#searchForm input {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border: 0;
+    font-size: 18px;
+    padding: 5px;
+    margin: 7px 15px;
+    text-align: center;
+}
+ button {
+   border-radius: 5px;
+}
+#currentWeatherWrapper {
+    width: 100%;
+    line-height: 40px;
+    padding: 0 20px;
+    background-color: rgba(238,238,238,.35);
+    overflow: hidden;
+}
