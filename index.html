@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
   
@@ -14,72 +14,74 @@
     <title>Weather Forcast</title>
   </head>
   <body>
+    <!-- Search Form -->
      <div id="header">
       <form id="searchForm">
-        
-       <a href="https://darksky.net/poweredby/"><img  src="images/poweredby.png" width='10%'height="10%" align='left' alt="Powered by Dark Sky"></a>
-              
-        <button class="currentLocationButton"><img src="images/location-16.png"></button>
+       <a href="https://darksky.net/poweredby/">
+        <img src="images/poweredby.png" width="10%" height="10%" align="left" alt="Powered by Dark Sky">
+      </a>    
+        <button class="currentLocationButton"><img src="images/location.png"></button>
            <input placeholder= "Where are you?" type="text" value>
-        <button class="searchButton"><img src="images/search-12-16.png"></button>
+        <button class="searchButton"><img src="images/search.png"></button>
       </form>
       </div>
     </div>
-    <div id="currentWeatherWrapper">
-      <img class="gradient-scroll" src="/images/gradient-scroll.png">
-      <div id="currentDetails">
-        <div class="wind">
-          <span class="label swip">Wind:</span>
-          <span class="val swap">
-            <span class="num swip">3</span>
-            <span class="unit swap">mph</span>
+    <!-- Current Forcast: wind, humidity, dew pt, UV, visiblity, pressure -->
+    <div id="currentDetailsWrapper">
+     <!--   <img class="gradient-scroll" src="/images/gradient-scroll.png">  -->
+        <div id="currentDetails">
+          <div class="wind">
+            <span class="label swip">Wind:</span>
+            <span class="val swap">
+              <span class="num swip">11</span>
+              <span class="unit swap">mph</span>
+              
+              <span class="direction" title="ENE" style="display:inline-block;-ms-transform:rotate(78deg);-webkit-transform:rotate(78deg);transform:rotate(78deg);">↑</span>
+            </span>
+          </div>
+    
+          <div class="humidity">
+            <span class="label swip">Humidity:</span>
+            <span class="val swap">
+              <span class="num swip">75</span><span class="unit swap">%</span>
+            </span>
+          </div>
+    
+          <div class="dew_point">
+            <span class="label swip">Dew Pt:</span>
+            <span class="val swap">
+              <span class="num">68</span><span class="unit">˚</span>
+            </span>
+          </div>
+    
+          <div class="current_details_break"></div>
+    
+          <div class="uv_index uv2">
+            <span class="label swip">UV Index:</span>
+            <span class="val swap">
+              <span class="num">6</span>
+            </span>
+          </div>
+    
+          <div class="visibility">
             
-            <span class="direction" title="NNW" style="display:inline-block;-ms-transform:rotate(345deg);-webkit-transform:rotate(345deg);transform:rotate(345deg);">↑</span>
-          </span>
-        </div>
-  
-        <div class="humidity">
-          <span class="label swip">Humidity:</span>
-          <span class="val swap">
-            <span class="num swip">93</span><span class="unit swap">%</span>
-          </span>
-        </div>
-  
-        <div class="dew_point">
-          <span class="label swip">Dew Pt:</span>
-          <span class="val swap">
-            <span class="num">57</span><span class="unit">˚</span>
-          </span>
-        </div>
-  
-        <div class="current_details_break"></div>
-  
-        <div class="uv_index uv0">
-          <span class="label swip">UV Index:</span>
-          <span class="val swap">
-            <span class="num">0</span>
-          </span>
-        </div>
-  
-        <div class="visibility">
-          
-          <span class="label swip">Visibility:</span>
-          <span class="val swap">
-            <span class="num swip">4</span>
-            <span class="unit swap">mi</span>
-          </span>
-        </div>
-  
-        <div class="pressure">
-          <span class="label swip">Pressure:</span>
-          <span class="val swap">
-            <span class="num swip">1016</span>
-            <span class="unit swap">mb</span>
-          </span>
+            <span class="label swip">Visibility:</span>
+            <span class="val swap">
+              <span class="num swip">10+</span>
+              <span class="unit swap">mi</span>
+            </span>
+          </div>
+    
+          <div class="pressure">
+            <span class="label swip">Pressure:</span>
+            <span class="val swap">
+              <span class="num swip">1014</span>
+              <span class="unit swap">mb</span>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
-
+    <!-- Current temp  & conditions, skycon-->
     <div class="center">  
       <div id="title">
         <span class="currently">
@@ -101,8 +103,7 @@
         </span>
       </div>
 
-      
-
+      <!-- Hourly Forcast and Temperture -->
       </div>
       <div class="scroll-container">
         <div id="timeline" class="timeline_container" style="width: 800px;">
@@ -114,9 +115,13 @@
           </div>
         <span class="now" style="left: 13px;"></span></div>
       </div>
+
+    <!-- Weather Map -->      
       <div id="map-container">
         <iframe id="embedded-map" width="100%" height="100%" src="//maps.darksky.net/@radar,40.7127,-74.0059,7?marker=40.7127,-74.0059&amp;linkto=maps"></iframe>
       </div>
+
+    <!-- Weekly Forcast -->  
       <div id="week" class="center">
 
         <div class="summary">
@@ -1053,13 +1058,9 @@
 
                          <a class="moreDetails" href="/details/40.7127,-74.0059/2018-5-27/us12/en" rel="nofollow">More Details</a>
                         </div>
-                        
-                      </div>
-  <!--- <div>
-  <a href="https://darksky.net/poweredby/"><img src="images/poweredby.png" width='10%'height="10%" alt="Powered by Dark Sky"></a>
-  </div> -->
+                     </div>
 
-   
+    <!-- Scripts: jQuery 3.3.1, popper, tooltips, Bootstrap 4, Dark Sky API, Skycons-->
     <script src="scripts/jquery/jquery-3.3.1.js"></script>
     <script src="scripts/popper.js/popper.js"></script>
     <script src="scripts/popper.js/tooltip.js"></script>
