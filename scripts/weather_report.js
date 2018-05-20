@@ -1,5 +1,4 @@
 // script page
 // Get location
 
-var location=document.getElementById("text");
-console.log(location);
+var location=document.form(['searchForm'].querySelector('input'));
