@@ -17,118 +17,18 @@
 
     <!-- Search Form -->
 
-     <div id="header">
-      <form id="searchForm">
-       <a href="https://darksky.net/poweredby/">
-        <img src="images/poweredby.png" width="10%" height="10%" align="left" alt="Powered by Dark Sky">
-      </a>    
-        <button class="currentLocationButton"><img src="images/location.png"></button>
-           <input placeholder= "Where are you?" type="text" value>
-        <button class="searchButton"><img src="images/search.png"></button>
-      </form>
-      </div>
-    </div>
+          <p>Date/Time: <span id="datetime"></span></p>
 
-    <!-- Current Forcast: wind, humidity, dew pt, UV, visiblity, pressure -->
-
-    <div id="currentDetailsWrapper">
-     <!--   <img class="gradient-scroll" src="/images/gradient-scroll.png">  -->
-        <div id="currentDetails">
-          <div class="wind">
-            <span class="label swip">Wind:</span>
-            <span class="val swap">
-              <span class="num swip">11</span>
-              <span class="unit swap">mph</span>
-              <span class="direction" title="ENE" style="display:inline-block;-ms-transform:rotate(78deg);-webkit-transform:rotate(78deg);transform:rotate(78deg);">↑</span>
-            </span>
-          </div>
-    
-          <div class="humidity">
-            <span class="label swip">Humidity:</span>
-            <span class="val swap">
-              <span class="num swip">75</span><span class="unit swap">%</span>
-            </span>
-          </div>
-    
-          <div class="dew_point">
-            <span class="label swip">Dew Pt:</span>
-            <span class="val swap">
-              <span class="num">68</span><span class="unit">˚</span>
-            </span>
-          </div>
-    
-          <div class="current_details_break"></div>
-    
-          <div class="uv_index uv2">
-            <span class="label swip">UV Index:</span>
-            <span class="val swap">
-              <span class="num">6</span>
-            </span>
-          </div>
-    
-          <div class="visibility">
-            
-            <span class="label swip">Visibility:</span>
-            <span class="val swap">
-              <span class="num swip">10+</span>
-              <span class="unit swap">mi</span>
-            </span>
-          </div>
-    
-          <div class="pressure">
-            <span class="label swip">Pressure:</span>
-            <span class="val swap">
-              <span class="num swip">1014</span>
-              <span class="unit swap">mb</span>
-            </span>
-          </div>
-        </div>
-      </div>
-    
-      <!-- Current temp  & conditions, skycon-->
-
-    <div class="center">  
-      <div id="title">
-        <span class="currently">
-          <span class="skycon swip">
-            <canvas width="84" height="84" class="cloudy"></canvas>
-          </span>
-          <span class="desc swap">
-            <span class="summary swap">59˚&nbsp;Overcast.</span>
-            <span class="summary-high-low">
-              <span><span class="high-low-label">Feels Like:&nbsp;</span>59˚</span>
-              <span><span class="high-low-label">Low:&nbsp;</span>56˚</span>
-              <span><span class="high-low-label">High:&nbsp;</span>79˚</span>
-            </span>
-          </span>
-        </span>
-        <span class="next swap">
-          
-          Mostly cloudy until tomorrow&nbsp;night.
-        </span>
-      </div>
-
-      <!-- Hourly Forcast and Temperture -->
-
-      </div>
-      <div class="scroll-container">
-        <div id="timeline" class="timeline_container" style="width: 800px;">
-          <div class="timeline">
-            <div class="stripes"><span class="timeline-stripe-3 first" style="width: 101px; left: 0px;"><span>Overcast</span></span><span class="timeline-stripe-2" style="width: 67.6667px; left: 100px;"></span><span class="timeline-stripe-3" style="width: 34.3333px; left: 166.667px;"></span><span class="timeline-stripe-2" style="width: 334.333px; left: 200px;"><span>Mostly Cloudy</span></span><span class="timeline-stripe-1" style="width: 201px; left: 533.333px;"><span>Partly Cloudy</span></span><span class="timeline-stripe-0" style="width: 65.6667px; left: 733.333px;"><span>Clear</span></span></div>
-            <div class="hour_ticks"><span class="even first" style="left: 0px;"></span><span class="odd second" style="left: 33.3333px;"></span><span class="even" style="left: 66.6667px;"></span><span class="odd" style="left: 100px;"></span><span class="even" style="left: 133.333px;"></span><span class="odd" style="left: 166.667px;"></span><span class="even" style="left: 200px;"></span><span class="odd" style="left: 233.333px;"></span><span class="even" style="left: 266.667px;"></span><span class="odd" style="left: 300px;"></span><span class="even" style="left: 333.333px;"></span><span class="odd" style="left: 366.667px;"></span><span class="even" style="left: 400px;"></span><span class="odd" style="left: 433.333px;"></span><span class="even" style="left: 466.667px;"></span><span class="odd" style="left: 500px;"></span><span class="even" style="left: 533.333px;"></span><span class="odd" style="left: 566.667px;"></span><span class="even" style="left: 600px;"></span><span class="odd" style="left: 633.333px;"></span><span class="even" style="left: 666.667px;"></span><span class="odd" style="left: 700px;"></span><span class="even" style="left: 733.333px;"></span><span class="odd" style="left: 766.667px;"></span></div>
-            <div class="hours"><span class="hour first" style="left: 1px;"><span class="Now">Now</span></span><span class="hour" style="left: 33.3333px;"></span><span class="hour" style="left: 66.6667px;"><span class="4am">4am</span></span><span class="hour" style="left: 100px;"></span><span class="hour" style="left: 133.333px;"><span class="6am">6am</span></span><span class="hour" style="left: 166.667px;"></span><span class="hour" style="left: 200px;"><span class="8am">8am</span></span><span class="hour" style="left: 233.333px;"></span><span class="hour" style="left: 266.667px;"><span class="10am">10am</span></span><span class="hour" style="left: 300px;"></span><span class="hour" style="left: 333.333px;"><span class="12pm">12pm</span></span><span class="hour" style="left: 366.667px;"></span><span class="hour" style="left: 400px;"><span class="2pm">2pm</span></span><span class="hour" style="left: 433.333px;"></span><span class="hour" style="left: 466.667px;"><span class="4pm">4pm</span></span><span class="hour" style="left: 500px;"></span><span class="hour" style="left: 533.333px;"><span class="6pm">6pm</span></span><span class="hour" style="left: 566.667px;"></span><span class="hour" style="left: 600px;"><span class="8pm">8pm</span></span><span class="hour" style="left: 633.333px;"></span><span class="hour" style="left: 666.667px;"><span class="10pm">10pm</span></span><span class="hour" style="left: 700px;"></span><span class="hour" style="left: 733.333px;"><span class="12am">12am</span></span><span class="hour" style="left: 766.667px;"></span></div>
-            <div class="temps"><span class="first" style="opacity: 0.25; left: 1px;"><span>59°</span></span><span style="opacity: 0.397133; left: 66.6667px;"><span>63°</span></span><span style="opacity: 0.442782; left: 133.333px;"><span>64°</span></span><span style="opacity: 0.535966; left: 200px;"><span>67°</span></span><span style="opacity: 0.632923; left: 266.667px;"><span>69°</span></span><span style="opacity: 0.787223; left: 333.333px;"><span>73°</span></span><span style="opacity: 0.967933; left: 400px;"><span>78°</span></span><span style="opacity: 1; left: 466.667px;"><span>79°</span></span><span style="opacity: 0.969064; left: 533.333px;"><span>78°</span></span><span style="opacity: 0.864562; left: 600px;"><span>76°</span></span><span style="opacity: 0.697812; left: 666.667px;"><span>71°</span></span><span style="opacity: 0.559733; left: 733.333px;"><span>67°</span></span></div>
-          </div>
-        <span class="now" style="left: 13px;"></span></div>
-      </div>
-
+         
+  
     <!-- Scripts: jQuery 3.3.1, popper, tooltips, Bootstrap 4, Dark Sky API, Skycons-->
-    <script src="scripts/jquery/jquery-3.3.1.js"></script>
+   <!-- <script src="scripts/jquery/jquery-3.3.1.js"></script>
     <script src="scripts/popper.js/popper.js"></script>
     <script src="scripts/popper.js/tooltip.js"></script>
     <script src="scripts/bootstrap/bootstrap.js"></script>
     <script src="scripts/dark-sky-api/dark-sky-api.js"></script>
     <script src="scripts/skycons/skycons.js"></script>
+   -->
     <script scr="scripts/weather_report.js"></script>
   </body>
 </html>
