@@ -7,6 +7,4 @@
  //https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F01d.png?1499366022009
  //{"coord":{"lon":-71.43,"lat":41.87}
  // Date///
- 
 
- 
