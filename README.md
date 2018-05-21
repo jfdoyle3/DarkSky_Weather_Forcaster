@@ -1,4 +1,4 @@
-# Dark Sky Weather Forcaster
+# Weather Forcaster
 
 A Webpage displaying the weather using the Dark Sky API.
 {"coord":{"lon":-71.43,"lat":41.87},
