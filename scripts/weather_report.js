@@ -51,7 +51,7 @@ function checkTime(i) {
 document.getElementById("time").innerHTML = time();
 
 ////forcast
-//
+
 function forcast(){
 var lat =41.87;
 var lon =-71.43; 
