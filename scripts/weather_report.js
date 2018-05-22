@@ -55,10 +55,10 @@ document.getElementById("time").innerHTML = time();
 function forcast(){
 var lat =41.87;
 var lon =-71.43; 
-var weatherSite = “https://fcc-weather-api.glitch.me/api/current?lon=”+lon +"&lat="+lat;
+var weatherSite = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat= '+lat;
 
 $.getJSON(weatherSite).done(function(data){
-$("#Temp").html(“Tempture is” + data.main.temp);
+$("#Temp").html('Tempture is' + data.main.temp);
 
 }	
 
