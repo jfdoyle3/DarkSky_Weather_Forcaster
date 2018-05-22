@@ -1,3 +1,3 @@
-# Dark Sky Weather Forcaster
+# Weather Forcaster
 
-A Webpage displaying the weather using the Dark Sky API.
+A Webpage displaying the weather.
