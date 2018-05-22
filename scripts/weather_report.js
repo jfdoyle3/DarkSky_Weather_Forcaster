@@ -52,10 +52,15 @@ document.getElementById("time").innerHTML = time();
 
 ////forcast
 //
+function forcast(){
+var lat =41.87;
+var lon =-71.43; 
+var weatherSite = “https://fcc-weather-api.glitch.me/api/current?lon=”+lon +"&lat="+lat;
 
+$.getJSON(weatherSite).done(function(data){
+$("#Temp").html(“Tempture is” + data.main.temp);
 
-}
-	
+}	
 
 //function getWeaterInfo(lat,lon){ 
 //  //When you have actual lat and lon data
@@ -96,6 +101,5 @@ document.getElementById("time").innerHTML = time();
 //$.getJSON(weatherSite).done(function(data){
 //$("#Temp").html(“Tempture is” + data.main.temp);
 
-//});
 
 
