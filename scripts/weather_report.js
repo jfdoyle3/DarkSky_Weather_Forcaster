@@ -7,6 +7,20 @@
  //https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F01d.png?1499366022009
  //{"coord":{"lon":-71.43,"lat":41.87}
  // Date///
- $( document ).ready(function() {
-    console.log( "ready!" );
+ $(function() {
+function formatDate(date) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+
+    return day + '-' + monthNames[monthIndex] + '-' + year;
+  }
+
+  document.getElementById("date").innerHTML =formatDate(new Date());
 });
