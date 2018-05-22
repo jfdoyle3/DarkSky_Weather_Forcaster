@@ -7,8 +7,17 @@
  //https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F01d.png?1499366022009
  //{"coord":{"lon":-71.43,"lat":41.87}
  // Date
-$(function() {
-function formatDate(date) {
+ function weekDay(date){
+   var wName=[
+     "Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
+ ];
+   var wDay = date.getDay();
+   var cDay= wName[wDay];
+   return cDay
+ }
+ document.getElementById("weekDay").innerHTML = weekDay(new Date());  
+
+ function formatDate(date) {
     var mName = [
       "January", "February", "March",
       "April", "May", "June", "July",
@@ -65,4 +74,3 @@ document.getElementById("time").innerHTML = time();
  //  }
  //  
  //}
- });
