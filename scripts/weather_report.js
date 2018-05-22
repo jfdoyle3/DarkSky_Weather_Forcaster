@@ -14,7 +14,7 @@
    var wDay = date.getDay();
    var cDay= wName[wDay];
    return cDay
- }
+ };
  document.getElementById("weekDay").innerHTML = weekDay(new Date());  
 
  function formatDate(date) {
