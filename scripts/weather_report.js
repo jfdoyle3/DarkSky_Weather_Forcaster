@@ -55,25 +55,15 @@ document.getElementById("time").innerHTML = time();
 function forcast(){
 var lat =41.87;
 var lon =-71.43; 
-var weatherSite = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat= '+lat;
+var forcast = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat='+lat;
 
-$.getJSON(weatherSite).done(function(data){
-$("#Temp").html('Tempture is' + data.main.temp);
+$.getJSON(forcast, getForcast);
+$("#temp").html('Tempture is' + forcast.main.temp);
 
+return forcast
 }	
-
-//function getWeaterInfo(lat,lon){ 
-//  //When you have actual lat and lon data
-//  var lat=41.87;
-//  var lon=-71.43;
-////  var urlString = +lat+"&"+lon;
-//  var urlString ="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
-//  console.log(urlString);
-//   // AJAX JSON DATA
- // $.ajax({
- //  type:"GET",
- //  url:urlString,
- //  success:function(data){
+document.getElementById("temp").innerHTML=forcast();
+//
  //   $("#icon").attr("src",data.weather[0].icon);
  //   var currentTempInCelsius = Math.round(data.main.temp * 10) / 10;
  //        $("#temp").text(currentTempInCelsius);
