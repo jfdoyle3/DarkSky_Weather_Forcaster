@@ -52,15 +52,36 @@
 
 
 // Location
-var api="https://fcc-weather-api.glitch.me/api/current?lat=41.87&lon=-71.43";
-$.getJSON(api,function(data){
-  console.log(data);
- var f=(data.main.temp * 1.8) + 32
-  icon=data.weather[0].icon;
-  $("#city").html(data.name);
-  $("#temp").html(parseInt(f)+"&#176");
-// document.write("<img src=\""+icon+"\"></img>");
-  $("weather").html("<img src=\""+icon+"\"></img>");
+//
+  $.get("https://api.ipdata.co", function (response) {
+    console.log(response);
+    const lat=response.latitude;
+    const lon=response.longitude;
+    var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
+    $.getJSON(api,function(data){
+   console.log(data);
+   var f=(data.main.temp * 1.8) + 32
+    icon=data.weather[0].icon;
+    $("#city").html(data.name);
+    $("#temp").html(parseInt(f)+"&#176");
+  
+  
+  });
 
-});
- 
+
+  //  $("#response").html(JSON.stringify(response, null, 4));
+  }, "jsonp");
+  console.log(lat, lon);
+
+
+//var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
+//var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
+//$.getJSON(api,function(data){
+// console.log(data);
+// var f=(data.main.temp * 1.8) + 32
+//  icon=data.weather[0].icon;
+//  $("#city").html(data.name);
+//  $("#temp").html(parseInt(f)+"&#176");
+//
+//
+//});
