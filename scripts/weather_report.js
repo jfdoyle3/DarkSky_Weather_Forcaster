@@ -40,7 +40,6 @@ function time() {
   var m = today.getMinutes();
   m = checkTime(m);
   var cTime= h + ":" + m; 
-//  if (h == 0)
     document.getElementById("time").innerHTML =  cTime;
   var t = setTimeout(time, 500);
 }
@@ -50,43 +49,50 @@ function checkTime(i) {
 }
 document.getElementById("time").innerHTML = time();
 
-////forcast
+//forcast
 
-function forcast(){
-var lat =41.87;
-var lon =-71.43; 
-var weatherSite = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat= '+lat;
-
-$.getJSON(weatherSite).done(function(data){
-$("#Temp").html('Tempture is' + data.main.temp);
-
-}	
-
-//function getWeaterInfo(lat,lon){ 
-//  //When you have actual lat and lon data
-//  var lat=41.87;
-//  var lon=-71.43;
-////  var urlString = +lat+"&"+lon;
-//  var urlString ="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
-//  console.log(urlString);
-//   // AJAX JSON DATA
- // $.ajax({
- //  type:"GET",
- //  url:urlString,
- //  success:function(data){
- //   $("#icon").attr("src",data.weather[0].icon);
- //   var currentTempInCelsius = Math.round(data.main.temp * 10) / 10;
- //        $("#temp").text(currentTempInCelsius);
- //        $("#city").text(data.name);
- //        $("#country").text(data.sys.country);
- //        $("desc").text(data.weather[0].main);
- //        $("tempUnit").text(" " + String.fromCharCode(176)+tempUnit);
- //        
- //        document.getElementById("forcast").innerHTML = getWeatherInfo();
- //  }
- //  
- //}
+//function forcast(){
+// var lat =  41.87092932;
+ //var lon = -71.42788283; 
+ //var weathertAPI = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat='+lat;
  
+// $.getJSON(weatherAPI, functon(data){
+// $("#temp").append("temp:" + data.main.temp);
+// }
+//}
+//document.getElementById("temp").innerHTML=forcast();
+
+//if (navigator.geolocation) {				
+// navigator.geolocation.getCurrentPosition(showPosition);
+//} else {
+// alert('Geolocation is not supported in your browser');
+//}
+//
+//function showPosition(position) {
+//  var api = "https://fcc-weather-api.glitch.me/api/current?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+//
+//  $.getJSON(api, function(data){
+//    // Getting Weather Details
+//    $("#place").html(data.name + ", " + data.sys.country);
+//    $("#windSpeed").html(data.wind.speed + "km/h");
+//    $("#humidity").html(data.main.humidity + "%");
+//    $("#celsius").html(data.main.temp.toFixed(1) + "°C");
+//    $("#temp").html(data.main.temp.toFixed(1));
+//    $("#description").html(data.weather[0].description);
+//    
+//   $("#icon").attr("src",data.weather[0].icon);
+//   var currentTempInCelsius = Math.round(data.main.temp * 10) / 10;
+//        $("#temp").text(currentTempInCelsius);
+//        $("#city").text(data.name);
+//        $("#country").text(data.sys.country);
+//        $("desc").text(data.weather[0].main);
+//        $("tempUnit").text(" " + String.fromCharCode(176)+tempUnit);
+//        
+//        document.getElementById("forcast").innerHTML = getWeatherInfo();
+//  }
+//  
+//}
+// 
 //function showPosition(position) {
 //var api = “https://fcc-weather-api.glitch.me/api/current?lat=" + position.coords.latitude + “&lon=” + position.coords.longitude; $.getJSON(api, function(data){
 // Getting Weather Details
@@ -103,3 +109,35 @@ $("#Temp").html('Tempture is' + data.main.temp);
 
 
 
+//var x = document.getElementById("demo");
+//function getLocation() {
+//  if (navigator.geolocation) {
+//    navigator.geolocation.getCurrentPosition(showPosition);
+//  } else {
+//    x.innerHTML = "Geolocation is not supported by this browser.";
+//  }
+//}
+//function showPosition(position) {
+//  x.innerHTML = "Latitude: " + position.coords.latitude + 
+// "<br>Longitude: " + position.coords.longitude; 
+//}
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
