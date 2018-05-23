@@ -11,38 +11,33 @@
     <link rel="stylesheet" type="text/css" href="css/weathersheet.css">
     -->
   <style>
-body {
-	background-color: blue;
-}
-div {
-	background: red;
-    width: 320px;
-    padding: 10px;
-    border: 5px solid gray;
-    margin: 0; 
-
-}
-
+    div {
+  background:red;
+  position:absolute;
+  color:#fff;
+  border-radius: 25px;
+  top:50%;
+  left:50%;
+  padding:15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}   
   </style>
 
     <title>Weather Forcast</title>
   </head>
   <body>
     
- <div class="col-sm ">
+
 
    <!-- <div class="card" style="width: 100%;"> -->
      <div>
-<span id="weekDay"></span>
-</div>
-<div>
-<span id="date"></span>
-</div>
-<div>
-<span id="time"></span>
-</div>
-<div>
+<h1 id="weekDay"></h1>
 <span id="temp"></span> 
+<span id="date"></span>
+<span id="time"></span>
+
 </div>
  <!--
 	<p class="card-text" style="color: #747476; text-align: justify">Mayor Jorge O. Elorza, the Department of Art, Culture + Tourism and Founding Partner FirstWorks announced details for PVDFest, Providence's signature art festival, which will return for its fourth edition June 7-10, 2018.</h6>
