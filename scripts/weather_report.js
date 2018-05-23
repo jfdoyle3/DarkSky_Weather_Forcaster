@@ -32,56 +32,36 @@
     return cMonth
   }
   document.getElementById("date").innerHTML =formatDate(new Date());
-
-   //  Time
- 
- function time() {
-   var today = new Date();
-   var h = today.getHours();
-   var m = today.getMinutes();
-   m = checkTime(m);
-   var cTime= h + ":" + m; 
+  
+  function time() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    m = checkTime(m);
+    var cTime= h + ":" + m; 
     document.getElementById("time").innerHTML =  cTime;
-   var t = setTimeout(time, 500);
- }
- function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-   return i;
- }
- time();
+    var t = setTimeout(time, 500);
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+  }
+  
+  time();
 
-
-// Location
-//
+  // Location
+  //
   $.get("https://api.ipdata.co", function (response) {
     console.log(response);
     const lat=response.latitude;
     const lon=response.longitude;
+    
     var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
     $.getJSON(api,function(data){
-   console.log(data);
-   var f=(data.main.temp * 1.8) + 32
-    icon=data.weather[0].icon;
-    $("#city").html(data.name);
-    $("#temp").html(parseInt(f)+"&#176");
-  
-  
+      console.log(data);
+      const f=(data.main.temp * 1.8) + 32
+      icon=data.weather[0].icon;
+      $("#city").html(data.name);
+      $("#temp").html(parseInt(f)+"&#176 F");      
   });
-
-
-  //  $("#response").html(JSON.stringify(response, null, 4));
   }, "jsonp");
-  console.log(lat, lon);
-
-
-//var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
-//var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
-//$.getJSON(api,function(data){
-// console.log(data);
-// var f=(data.main.temp * 1.8) + 32
-//  icon=data.weather[0].icon;
-//  $("#city").html(data.name);
-//  $("#temp").html(parseInt(f)+"&#176");
-//
-//
-//});
