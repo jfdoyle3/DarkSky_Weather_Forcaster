@@ -40,7 +40,6 @@ function time() {
   var m = today.getMinutes();
   m = checkTime(m);
   var cTime= h + ":" + m; 
-//  if (h == 0)
     document.getElementById("time").innerHTML =  cTime;
   var t = setTimeout(time, 500);
 }
@@ -50,33 +49,50 @@ function checkTime(i) {
 }
 document.getElementById("time").innerHTML = time();
 
-////forcast
+//forcast
 
-function forcast(){
-var lat =41.87;
-var lon =-71.43; 
-var forcast = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat='+lat;
+//function forcast(){
+//  debugger;
+// var lat =  41.87092932;
+// var lon = -71.42788283; 
+// var weathertAPI = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat='+lat;
+// $.getJSON(weatherAPI, functon(data){
+// $("#temp").append("temp:" + data.main.temp);
+//})
+//}
+//document.getElementById("temp").innerHTML=forcast();
 
-$.getJSON(forcast, getForcast);
-$("#temp").html('Tempture is' + forcast.main.temp);
-
-return forcast
-}	
-document.getElementById("temp").innerHTML=forcast();
+//if (navigator.geolocation) {				
+// navigator.geolocation.getCurrentPosition(showPosition);
+//} else {
+// alert('Geolocation is not supported in your browser');
+//}
 //
- //   $("#icon").attr("src",data.weather[0].icon);
- //   var currentTempInCelsius = Math.round(data.main.temp * 10) / 10;
- //        $("#temp").text(currentTempInCelsius);
- //        $("#city").text(data.name);
- //        $("#country").text(data.sys.country);
- //        $("desc").text(data.weather[0].main);
- //        $("tempUnit").text(" " + String.fromCharCode(176)+tempUnit);
- //        
- //        document.getElementById("forcast").innerHTML = getWeatherInfo();
- //  }
- //  
- //}
- 
+//function showPosition(position) {
+//  var api = "https://fcc-weather-api.glitch.me/api/current?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+//
+//  $.getJSON(api, function(data){
+//    // Getting Weather Details
+//    $("#place").html(data.name + ", " + data.sys.country);
+//    $("#windSpeed").html(data.wind.speed + "km/h");
+//    $("#humidity").html(data.main.humidity + "%");
+//    $("#celsius").html(data.main.temp.toFixed(1) + "°C");
+//    $("#temp").html(data.main.temp.toFixed(1));
+//    $("#description").html(data.weather[0].description);
+//    
+//   $("#icon").attr("src",data.weather[0].icon);
+//   var currentTempInCelsius = Math.round(data.main.temp * 10) / 10;
+//        $("#temp").text(currentTempInCelsius);
+//        $("#city").text(data.name);
+//        $("#country").text(data.sys.country);
+//        $("desc").text(data.weather[0].main);
+//        $("tempUnit").text(" " + String.fromCharCode(176)+tempUnit);
+//        
+//        document.getElementById("forcast").innerHTML = getWeatherInfo();
+//  }
+//  
+//}
+// 
 //function showPosition(position) {
 //var api = “https://fcc-weather-api.glitch.me/api/current?lat=" + position.coords.latitude + “&lon=” + position.coords.longitude; $.getJSON(api, function(data){
 // Getting Weather Details
