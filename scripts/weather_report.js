@@ -52,13 +52,13 @@ document.getElementById("time").innerHTML = time();
 //forcast
 
 //function forcast(){
-//  debugger;
 // var lat =  41.87092932;
-// var lon = -71.42788283; 
-// var weathertAPI = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat='+lat;
+ //var lon = -71.42788283; 
+ //var weathertAPI = 'https://fcc-weather-api.glitch.me/api/current?lon=' + lon +'&lat='+lat;
+ 
 // $.getJSON(weatherAPI, functon(data){
 // $("#temp").append("temp:" + data.main.temp);
-//})
+// }
 //}
 //document.getElementById("temp").innerHTML=forcast();
 
@@ -109,3 +109,35 @@ document.getElementById("time").innerHTML = time();
 
 
 
+//var x = document.getElementById("demo");
+//function getLocation() {
+//  if (navigator.geolocation) {
+//    navigator.geolocation.getCurrentPosition(showPosition);
+//  } else {
+//    x.innerHTML = "Geolocation is not supported by this browser.";
+//  }
+//}
+//function showPosition(position) {
+//  x.innerHTML = "Latitude: " + position.coords.latitude + 
+// "<br>Longitude: " + position.coords.longitude; 
+//}
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
