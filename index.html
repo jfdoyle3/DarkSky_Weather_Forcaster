@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/weathersheet.css">
+   <link rel="stylesheet" type="text/css" href="css/weathersheet.css">
     <script src="scripts/jquery/jquery-3.3.1.js"></script>
   
   <style>
@@ -18,15 +18,14 @@
 
 <div>
 
-<h1 id="weekDay"></h1> 
-<h1 id="temp"></h1>
-<h1 id="city"></h1>
-<h1 id="date"></h1>
-<h1 id="time"></h1>
+<span id="img"></span>
+<p id="temp"></p>
 
-  
-
-
+<input type="button" value="F" id="toggle" onclick="return fc(this);" />
+<p id="cond"></p>
+<p id="city"></p>
+<p id="date"></p>
+<p id="time"></p>
 </div>
   
     <!-- Scripts: popper, tooltips, Bootstrap 4, Dark Sky API, Skycons-->

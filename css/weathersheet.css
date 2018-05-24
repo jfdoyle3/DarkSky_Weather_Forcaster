@@ -1,27 +1,30 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+}
 div {
-  background: seagreen;
+  background-color: #89c5f7;
   position:absolute;
-  color:#fff;
+  color:#394569;
   border-radius: 25px;
+  border-color: blue;
   top:50%;
   left:50%;
   padding:15px;
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+}
 
-} 
-#weekDay{
-  text-align: center;
-}
-#time,#date{
-  display: inline-block;
-  width: 175px;
+#img , #temp, #toggle {
   
-}
-#city {
-  text-align: center;
-}
-#time,#temp{
-  text-align: right;
-}
+  display: inline;
+  justify-content: bottom;
+    
+  }
+input {
+  background-color: #799fbe;
+  border-radius: 10px;  
+  font-size: 25px;
+  color:#394569;
+  }
