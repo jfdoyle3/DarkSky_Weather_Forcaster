@@ -51,31 +51,40 @@
 // 
   // Location
   //
- // $.get("https://api.ipdata.co", function (response) {
- //   console.log(response);
- //   const lon=response.longitude;
- //   const lat=response.latitude;
+//$.get("https://api.ipdata.co", function (response) {
+//  console.log(response);
+// const lon=response.longitude;
+//  const lat=response.latitude;
+  
+ var sTemp=0;
   var api="https://fcc-weather-api.glitch.me/api/current?lat=41.87092932&lon=-71.42788283";
-  //  var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
+ //   var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
     $.getJSON(api,function(data){
       console.log(data);
+      console.log(sTemp);
       const f=(data.main.temp * 1.8) + 32;
-      
       icon=data.weather[0].icon;
       var img="<img src="+icon+">";
       $("#city").html(data.name);
       $("#img").html(img);
-     
-     function fc(btn){
-       
-       if(btn.value === "F" ){
-        $("#temp").html(parseInt(f)+"&#176");
-      btn.value="F";
-       } else {
-        $("#temp").html(parseInt(data.main.temp)+"&#176");
-        btn.value="C";
-       }
-     }
-     });
+      $("#temp").html(parseInt(f)+"&#176");
+      $("#toggle").attr("value", "F");
+      $("#toggle").on("click",function(){
+          if(document.getElementById("toggle").value == "F"){
+            $("#temp").html(parseInt(data.main.temp)+"&#176");  
+            $("#toggle").attr("value","C");
+          } else
+          if(document.getElementById("toggle").value == "C"){
+            $("#temp").html(parseInt(f)+"&#176");  
+            $("#toggle").attr("value","F");
+          }
+      });
+    });
+      // $("#temp").on("click",data.main.temp+"&#0176"); 
       
-  //}, "jsonp");
+       
+     
+
+  
+         
+// }, "jsonp");
