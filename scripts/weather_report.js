@@ -81,7 +81,7 @@
         } 
       });
     });
-      // $("#temp").on("click",data.main.temp+"&#0176"); 
+    
       
        
      
