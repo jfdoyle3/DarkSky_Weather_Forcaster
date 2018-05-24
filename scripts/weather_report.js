@@ -73,11 +73,12 @@
           if(document.getElementById("toggle").value == "F"){
             $("#temp").html(parseInt(data.main.temp)+"&#176");  
             $("#toggle").attr("value","C");
-          } else
+          } else {
           if(document.getElementById("toggle").value == "C"){
             $("#temp").html(parseInt(f)+"&#176");  
             $("#toggle").attr("value","F");
           }
+        } 
       });
     });
       // $("#temp").on("click",data.main.temp+"&#0176"); 
