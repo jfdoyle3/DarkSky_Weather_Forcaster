@@ -1,8 +1,7 @@
 // script page
 var lat;
 var lon;
- 
-  // Location
+   // Location
   //
 
  if(navigator.geolocation) {
