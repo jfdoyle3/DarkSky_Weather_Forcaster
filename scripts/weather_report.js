@@ -6,7 +6,8 @@
  // weather[0].icon:
  //https://cdn.glitch.com/6e8889e5-7a72-48f0-a061-863548450de5%2F01d.png?1499366022009
  //{"coord":{"lon":-71.43,"lat":41.87}
-
+var lat;
+var lon;
  // Date
  // function weekDay(date){
  // var week = [
@@ -51,22 +52,26 @@
 // 
   // Location
   //
+
+ if(navigator.geolocation) {
+   navigator.geolocation.getCurrentPosition(function(positon){
+     lon= positon.coords.longitude;
+     lat= positon.coords.latitude;
+   
 //$.get("https://api.ipdata.co", function (response) {
 //  console.log(response);
 // const lon=response.longitude;
 //  const lat=response.latitude;
   
- var sTemp=0;
-  var api="https://fcc-weather-api.glitch.me/api/current?lat=41.87092932&lon=-71.42788283";
- //   var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
+ // var api="https://fcc-weather-api.glitch.me/api/current?lat=41.87092932&lon=-71.42788283";
+    var api="https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
     $.getJSON(api,function(data){
-      console.log(data);
-      console.log(sTemp);
       const f=(data.main.temp * 1.8) + 32;
       icon=data.weather[0].icon;
       var img="<img src="+icon+">";
       $("#city").html(data.name);
       $("#img").html(img);
+      $("#cond").html(data.weather[0].main);
       $("#temp").html(parseInt(f)+"&#176");
       $("#toggle").attr("value", "F");
       $("#toggle").on("click",function(){
@@ -81,11 +86,12 @@
         } 
       });
     });
-    
+  });  
+} 
+  
       
        
      
 
   
          
-// }, "jsonp");
